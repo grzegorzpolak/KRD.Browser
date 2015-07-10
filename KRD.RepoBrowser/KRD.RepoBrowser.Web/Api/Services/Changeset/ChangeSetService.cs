@@ -6,8 +6,9 @@ using KRD.RepoBrowser.Data.Query.Interfaces;
 using KRD.RepoBrowser.Web.Api.Helpers;
 using KRD.RepoBrowser.Web.Api.Services.Changeset.Dto;
 
-using ServiceStack;
-
+using ServiceStack.Common;
+using ServiceStack.ServiceHost;
+using ServiceStack.ServiceInterface;
 
 namespace KRD.RepoBrowser.Web.Api.Services.Changeset
 {
@@ -44,9 +45,8 @@ namespace KRD.RepoBrowser.Web.Api.Services.Changeset
 
       IEnumerable<Data.Models.Changeset> changesets = _changesetQuery.Get(changesetFilter);
 
-        List<ChangesetResponse> responses =
-            //changesets.Select(changeset => changeset.TranslateTo<ChangesetResponse>()).ToList();
-            changesets.Select(changeset => changeset.ConvertTo<ChangesetResponse>()).ToList();
+      List<ChangesetResponse> responses =
+        changesets.Select(changeset => changeset.TranslateTo<ChangesetResponse>()).ToList();
 
       return responses;
     }
@@ -64,9 +64,7 @@ namespace KRD.RepoBrowser.Web.Api.Services.Changeset
 
       if (_columnSwitch.ContainsKey(columnName))
       {
-        //return RequestContext.ToOptimizedResultUsingCache(base.Cache, columnName, new TimeSpan(24, 0, 0), () => _columnSwitch[columnName]());
-          return base.Request.ToOptimizedResultUsingCache(base.Cache, columnName, new TimeSpan(24, 0, 0),
-              () => _columnSwitch[columnName]());
+        return RequestContext.ToOptimizedResultUsingCache(base.Cache, columnName, new TimeSpan(24, 0, 0), () => _columnSwitch[columnName]());
       }
 
       return null;

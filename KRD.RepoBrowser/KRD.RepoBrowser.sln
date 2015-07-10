@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KRD.RepoBrowser.Web", "KRD.RepoBrowser.Web\KRD.RepoBrowser.Web.csproj", "{58FA679B-0837-4DCE-901D-F6D8B0FCC4B1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KRD.RepoBrowser.Data", "KRD.RepoBrowser.Data\KRD.RepoBrowser.Data.csproj", "{1A41D785-B6CE-4002-B91F-11C35DBEE5D3}"

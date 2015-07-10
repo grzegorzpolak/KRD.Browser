@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using ServiceStack;
-//using ServiceStack.ServiceHost;
+
+using ServiceStack.ServiceHost;
 
 namespace KRD.RepoBrowser.Web.Api.Services.Changeset.Dto
 {

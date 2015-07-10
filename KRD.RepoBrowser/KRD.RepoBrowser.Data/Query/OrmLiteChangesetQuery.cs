@@ -71,10 +71,9 @@ namespace KRD.RepoBrowser.Data.Query
     {
       string memberName = ReflectionHelper.GetMemberName(selector);
 
-      
-        using (var db = _dbConnectionFactory.OpenDbConnection())
+      using (var db = _dbConnectionFactory.OpenDbConnection())
       {
-        return db.HashSet<string>(string.Format("SELECT {0} FROM {1}", memberName, TableName));
+        return db.HashSet<string>(string.Format("SELECT {0} FROM {1}", memberName, TableName));    
       }
     }
   }

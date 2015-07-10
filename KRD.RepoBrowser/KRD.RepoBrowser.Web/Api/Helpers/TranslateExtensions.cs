@@ -5,8 +5,8 @@ using System.Web;
 
 using KRD.RepoBrowser.Data.Query.Filters;
 using KRD.RepoBrowser.Web.Api.Services.Changeset.Dto;
-using ServiceStack;
-//using ServiceStack.Common;
+
+using ServiceStack.Common;
 
 namespace KRD.RepoBrowser.Web.Api.Helpers
 {
@@ -14,8 +14,7 @@ namespace KRD.RepoBrowser.Web.Api.Helpers
   {
     public static ChangesetFilter ToChangesetFilter(this ChangesetRequest request)
     {
-      //var result = request.TranslateTo<ChangesetFilter>();
-        var result = request.ConvertTo<ChangesetFilter>();
+      var result = request.TranslateTo<ChangesetFilter>();
 
       if (result.TimestampFrom.HasValue && result.TimestampFrom == DateTime.MinValue)
       {
