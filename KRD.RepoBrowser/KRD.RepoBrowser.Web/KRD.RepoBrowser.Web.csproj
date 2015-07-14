@@ -225,6 +225,7 @@
     <Content Include="Scripts\ViewModels\DatesViewModel.js" />
     <Content Include="Scripts\ViewModels\init.js" />
     <Content Include="Scripts\ViewModels\RepositoryNameViewModel.js" />
+    <Content Include="Scripts\ViewModels\Skrypt.js" />
     <Content Include="Scripts\ViewModels\UserNameViewModel.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

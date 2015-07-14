@@ -5,10 +5,14 @@
 
 <div class="container">
   <div class="span12">
+    <div>@ViewBag.Login</div>
     <div class="hero-unit2 row">
       <h1>KRD SourceMiner</h1>
       <p>Przeglądarka repozytorium SourceMiner, gdzie przechowywana jest historia zmian ze wszystkich repozytoriów (SVN + Mercurial)</p>
     </div>
+
+
+
     <div id="forms" class="row">
       <div class="span3 span3-no-margin" id="datesViewModel">
         <form >
@@ -32,11 +36,11 @@
           <fieldset>
             <legend>Użytkownicy</legend>
             <div class="input-append">
-              <input type="text" class="span2" id="userNameToAdd" data-bind='typeahead: UserNameList, value: UserNameToAdd, valueUpdate: "afterkeydown"' />
+              <input type="text" class="span2" id="userNameToAdd" data-bind='typeahead: UserNameList, value: UserNameToAdd, valueUpdate: "afterkeydown"'/>
               <button type="button" class="btn btn-success" data-bind="click: addUserName, enable: UserNameToAdd().length > 0">+</button>
               <button type="button" class="btn btn-danger" data-bind="click: removeUserName, enable: UserNameSelected().length > 0">-</button>
             </div>
-            <br />
+            <br/>
             <select multiple="multiple" class="span2" height="5" data-bind="options: UserNames, selectedOptions: UserNameSelected"> </select>
           </fieldset>
         </form>
@@ -46,11 +50,11 @@
           <fieldset>
             <legend>Gałęzie</legend>
             <div class="input-append">
-              <input type="text" class="span2" id="branchNameToAdd" data-bind='typeahead: BranchNameList, value: BranchNameToAdd, valueUpdate: "afterkeydown"' />
+              <input type="text" class="span2" id="branchNameToAdd" data-bind='typeahead: BranchNameList, value: BranchNameToAdd, valueUpdate: "afterkeydown"'/>
               <button type="button" class="btn btn-success" data-bind="click: addBranchName, enable: BranchNameToAdd().length > 0">+</button>
               <button type="button" class="btn btn-danger" data-bind="click: removeBranchName, enable: BranchNameSelected().length > 0">-</button>
             </div>
-            <br />
+            <br/>
             <select multiple="multiple" class="span2" height="5" data-bind="options: BranchNames, selectedOptions: BranchNameSelected"> </select>
           </fieldset>
         </form>
@@ -60,11 +64,11 @@
           <fieldset>
             <legend>Repozytoria</legend>
             <div class="input-append">
-              <input type="text" class="span2" id="repositoryNameToAdd" data-bind='typeahead: RepositoryNameList, value: RepositoryNameToAdd, valueUpdate: "afterkeydown"' />
+              <input type="text" class="span2" id="repositoryNameToAdd" data-bind='typeahead: RepositoryNameList, value: RepositoryNameToAdd, valueUpdate: "afterkeydown"'/>
               <button type="button" class="btn btn-success" data-bind="click: addRepositoryName, enable: RepositoryNameToAdd().length > 0">+</button>
               <button type="button" class="btn btn-danger" data-bind="click: removeRepositoryName, enable: RepositoryNameSelected().length > 0">-</button>
             </div>
-            <br />
+            <br/>
             <select class="span2" multiple="multiple" height="5" data-bind="options: RepositoryNames, selectedOptions: RepositoryNameSelected"> </select>
           </fieldset>
         </form>
@@ -72,11 +76,13 @@
     </div>
     <div id="changesetViewModel">
       <div class="row">
-        <p><a class="btn btn-primary btn-large" id="submitData" data-bind="click: getChangesets">Szukaj &raquo;</a></p>
+        <p><a class="btn btn-primary btn-large" id="submitData" data-bind="click: getChangesets">Szukaj &raquo;</a>
+      
+        </p>
       </div>
       <div class="row">
         <div class="gridStyle" data-bind="koGrid: gridOptions"></div>
-      </div>      
+      </div>
     </div>
   </div>
 </div>
@@ -91,3 +97,17 @@
   <script type="text/javascript" src="@Url.Content("~/Scripts/ViewModels/ChangesetViewModel.js")"> </script>
   <script type="text/javascript" src="@Url.Content("~/Scripts/ViewModels/init.js")"> </script>
 }
+
+
+<div id="cal-heatmap"></div>
+<script type="text/javascript">
+  dataTable = { "1420498800": 2, "1420585200": 4, "1420671600": 2, "1420758000": 1, "1421103600": 2, "1421190000": 1, "1421276400": 1, "1421362800": 1, "1421622000": 1, "1421708400": 1, "1422226800": 1, "1422313200": 1, "1422399600": 2, "1422486000": 1, "1422572400": 1, "1423695600": 3, "1424127600": 2, "1424214000": 1, "1424300400": 3, "1424386800": 1, "1424646000": 2, "1424732400": 1, "1424818800": 2, "1424905200": 2, "1424991600": 1, "1425337200": 1, "1425855600": 4, "1426201200": 2, "1426460400": 2, "1426546800": 1, "1426633200": 2, "1426719600": 1, "1426806000": 1, "1427065200": 1, "1427151600": 1, "1427238000": 2, "1427324400": 1, "1427670000": 2, "1428361200": 2, "1428447600": 2, "1428534000": 3, "1428620400": 3, "1428966000": 2, "1429138800": 2, "1429225200": 1, "1429484400": 2, "1429570800": 1, "1429657200": 2, "1429743600": 2, "1429830000": 3 };
+  var cal = new CalHeatMap();
+  cal.init({
+    start: new Date(2010, 0),
+    range: 9,
+    domain: "year",
+    subDomain: "month",
+    data: dataTable
+  });
+</script>

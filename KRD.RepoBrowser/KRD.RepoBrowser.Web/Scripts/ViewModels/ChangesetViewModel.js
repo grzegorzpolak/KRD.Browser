@@ -25,6 +25,7 @@
         _this.Changesets(data);
       });
     };
+
   }
 
   return ChangesetViewModel;

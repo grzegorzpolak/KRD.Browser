@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
 using KRD.RepoBrowser.Data.Query.Filters;
 using KRD.RepoBrowser.Web.Api.Services.Changeset.Dto;
-
 using ServiceStack.Common;
 
 namespace KRD.RepoBrowser.Web.Api.Helpers
