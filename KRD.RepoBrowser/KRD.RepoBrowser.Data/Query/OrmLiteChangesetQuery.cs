@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 using System.Linq.Expressions;
 
 using KRD.RepoBrowser.Data.Helpers;
 using KRD.RepoBrowser.Data.Models;
 using KRD.RepoBrowser.Data.Query.Filters;
 using KRD.RepoBrowser.Data.Query.Interfaces;
-
+using ServiceStack.Common;
 using ServiceStack.OrmLite;
+using ServiceStack.Text;
 
 namespace KRD.RepoBrowser.Data.Query
 {
@@ -47,7 +50,7 @@ namespace KRD.RepoBrowser.Data.Query
         IEnumerable<Changeset> changesets = hasNoFilter
                                               ? db.Select<Changeset>()
                                               : db.Select<Changeset>(predicate);
-
+        
         return changesets;
       }
     }

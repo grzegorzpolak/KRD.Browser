@@ -4,7 +4,7 @@ using ServiceStack.ServiceHost;
 
 namespace KRD.RepoBrowser.Web.Api.Services.Changeset.Dto
 {
-  [Route("/changeset", "POST")]
+  [Route("/changeset", "POST GET")]
   public class ChangesetRequest : IReturn<List<ChangesetResponse>>
   {
     public DateTime? TimestampFrom { get; set; }
